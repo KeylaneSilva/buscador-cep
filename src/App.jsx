@@ -56,6 +56,7 @@ function App() {
       setEstado("")
       setCidade("")
       setLogradouro("")
+      
 
     }catch(e){
       alert('Não foi possível encontrar o cep')
@@ -123,22 +124,31 @@ function App() {
                 onChange={e => setLogradouro(e.target.value)}
               />
 
-              <button id="buttonx"className='buttonSearch' onClick={handleSearch2}>
+              <button id="buttonx" className='buttonSearch' onClick={handleSearch2}>
                 <FiSearch size={25} color='#FFF'/>
               </button>
             </div>
           </div>
 
-          {Object.keys(endCep).length > 0 && 
+          {/* {Object.keys(endCep).length > 0 && (
               <main className='main'>
                 <h2>Cep: {endCep[0].cep} </h2>
                 <span>Bairro: {endCep[0].bairro}</span>
               </main> 
-            }
+              )
+            } */}
+        
         </div>
       </div>
     </div>
   );
+
+  const handleClick = (e) => {
+    document.getElementById('buttonx').click() ? 
+            alert('clicou') : console.log('aqui')
+
+  }
+           
 }
 
 export default App;
