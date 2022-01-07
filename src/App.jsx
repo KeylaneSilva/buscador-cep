@@ -14,9 +14,9 @@ function App() {
   const [logradouro, setLogradouro] = useState()
   const [endCep, setEndCep] = useState({})
 
-
-  //veriifcação de input vazio
+  //func consulta cep
   async function handleSearch(){
+    //veriifcação de input vazio
     if(input == ""){
       alert('Preencha o cep')
       return

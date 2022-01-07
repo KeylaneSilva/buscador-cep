@@ -9,9 +9,10 @@
 
 .title{
     margin-top: 30px;
-    font-size: 85px;
+    font-size: 50px;
     color: #FFF;
     animation: flipTitle 1s;
+    
     
 }
 
@@ -108,7 +109,7 @@
 
 @media (max-width: 620px){
     .title{
-        font-size: 60px;
+        font-size: 40px;
     }
 
     .main h2{
@@ -118,6 +119,12 @@
     .mains{
         width: 80%;
         min-height: 250px;
+    }
+}
+@media (max-width: 1000px){
+    .containerbuscaCep{
+        display: flex;
+        flex-direction: column;
     }
 }
 
