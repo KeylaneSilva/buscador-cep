@@ -71,7 +71,7 @@ function App() {
 
           <div className='containerInput'>
             <input 
-              type="text"
+              type="number"
               placeholder='Digite o seu cep'
               value={input}
               onChange={e => setInput(e.target.value)}
@@ -92,7 +92,7 @@ function App() {
               <span>Complemento: {cep.complemento}</span>
               <span>{cep.localidade} - {cep.uf}</span>
 
-              <span>--------------------------------------------------------------------------------</span>
+              <span>----------------------------------------------------------------</span>
               <h3>Informações adicionais</h3><br />
               <span>DDD: {cep.ddd}</span>
               <span>Ibge: {cep.ibge}</span>

@@ -120,6 +120,21 @@
         width: 80%;
         min-height: 250px;
     }
+    .container{
+       width: 500px; 
+       height: 200vh;
+    }
+    .container1{
+        width: 400px;
+        margin-left: -50px;
+    }
+    .main{
+        width: 400px;
+        
+    }
+    .container1 .buttonSearch{
+        margin-left: -100px;
+    }
 }
 @media (max-width: 1000px){
     .containerbuscaCep{
