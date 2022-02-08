@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FiSearch } from 'react-icons/fi'
 import './App.css'
 import './service/api'
@@ -12,7 +12,7 @@ function App() {
   const [estado, setEstado] = useState()
   const [cidade, setCidade] = useState()
   const [logradouro, setLogradouro] = useState()
-  const [endCep, setEndCep] = useState({})
+  const [endCep, setEndCep] = useState([])
 
   //func consulta cep
   async function handleSearch(){
@@ -57,11 +57,17 @@ function App() {
       setCidade("")
       setLogradouro("")
       
-
     }catch(e){
       alert('Não foi possível encontrar o cep')
     }
   }
+
+  const cepEncontrado = endCep.map((end) =>
+    <main className='main'>
+      <h2>Cep: {end.cep} </h2>
+      <span>Bairro: {end.bairro}</span>
+    </main> 
+  )
 
   return (
     <div className='container'>
@@ -71,7 +77,8 @@ function App() {
         <div className="container1">
 
           <div className='containerInput'>
-            <input 
+            <input
+              id="buscarcep" 
               type="number"
               placeholder='Digite o seu cep'
               value={input}
@@ -130,24 +137,15 @@ function App() {
             </div>
           </div>
 
-          {/* {Object.keys(endCep).length > 0 && (
-              <main className='main'>
-                <h2>Cep: {endCep[0].cep} </h2>
-                <span>Bairro: {endCep[0].bairro}</span>
-              </main> 
+          {Object.keys(endCep).length > 0 && (
+            cepEncontrado
               )
-            } */}
+            }
         
         </div>
       </div>
     </div>
   );
-
-  const handleClick = (e) => {
-    document.getElementById('buttonx').click() ? 
-            alert('clicou') : console.log('aqui')
-
-  }
            
 }
 
